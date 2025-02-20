@@ -7,6 +7,7 @@
     "build": "tsc",
     "dev": "nodemon --exec ts-node ./src/server.ts",
     "start": "npm run build && node dist/server.js",
+    "format": "prettier --write \"src/**/*.ts\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "david arinze",
@@ -29,6 +30,7 @@
     "@types/morgan": "^1.9.9",
     "@types/node": "^22.13.4",
     "nodemon": "^3.1.9",
+    "prettier": "^3.5.1",
     "ts-node": "^10.9.2",
     "typescript": "^5.7.3"
   }

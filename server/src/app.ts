@@ -22,19 +22,19 @@ app.use('/', indexRoute);
 
 // middleware to handle 404 errors
 app.use((req: Request, res: Response, next: NextFunction) => {
-    const error: any = new Error('Not Found');
-    error.status = 404;
-    next(error); // pass the error to the next middleware
+  const error: any = new Error('Not Found');
+  error.status = 404;
+  next(error); // pass the error to the next middleware
 });
-  
-  // error-handling middleware
-  app.use((error: any, req: Request, res: Response, next: NextFunction) => {
-    res.status(error.status || 500);
-    res.json({
-      error: {
-        message: error.message || 'Internal Server Error',
-      },
-    });
+
+// error-handling middleware
+app.use((error: any, req: Request, res: Response, next: NextFunction) => {
+  res.status(error.status || 500);
+  res.json({
+    error: {
+      message: error.message || 'Internal Server Error',
+    },
+  });
 });
 
 export default app;
