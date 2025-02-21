@@ -5,6 +5,7 @@ import logger from 'morgan';
 
 // import routes
 import indexRoute from './routes/index';
+import authRoutes from './routes/auth';
 
 import main from './config/database';
 
@@ -19,6 +20,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(logger('dev'));
 
 app.use('/', indexRoute);
+app.use('/api/auth', authRoutes);
 
 // middleware to handle 404 errors
 app.use((req: Request, res: Response, next: NextFunction) => {
