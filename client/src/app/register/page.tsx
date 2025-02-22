@@ -24,7 +24,7 @@ export default function Signup() {
       console.log("Register Response:", data);
 
       dispatch(loginSuccess({ token: data.token, user: data.user }));
-      router.push("/dashboard");
+      router.push("/login");
     } catch (err: any) {
       setError(err.response?.data?.message || "Signup failed. Please try again.");
     }
